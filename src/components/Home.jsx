@@ -1,12 +1,15 @@
 import React from 'react';
-import launchCountries from '../api/countries';
+import Form from './Form';
 
 function Home() {
   
-  launchCountries();
   return (
     <div>
-      
+      <header>
+        <h1>Where in the World</h1>
+        <a href="#">Dark Mode</a>
+      </header>
+      <Form />
     </div>
   );
 }
