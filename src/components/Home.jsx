@@ -1,13 +1,16 @@
 import React from 'react';
 import Form from './Form';
+import '../styles/Home.css';
 
 function Home() {
   
   return (
     <div>
       <header>
-        <h1>Where in the World</h1>
-        <a href="#">Dark Mode</a>
+        <div className="header-content">
+          <h1>Where in the World?</h1>
+          <button>Dark Mode</button>
+        </div>
       </header>
       <Form />
     </div>

@@ -1,0 +1,29 @@
+header, .header-content {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  border-bottom: 2px solid;
+  height: 60px;
+
+  justify-content: center;  
+}
+
+.header-content {
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+header h1 {
+  font-size: 1.4em;
+
+}
+
+header button {
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  font-size: 1.4em;
+}
