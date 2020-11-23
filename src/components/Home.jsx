@@ -1,11 +1,13 @@
 import React from 'react';
 import Form from './Form';
+import Container from './Container';
+
 import '../styles/Home.css';
 
 function Home() {
   
   return (
-    <div>
+    <>
       <header>
         <div className="header-content">
           <h1>Where in the World?</h1>
@@ -13,7 +15,8 @@ function Home() {
         </div>
       </header>
       <Form />
-    </div>
+      <Container />
+    </>
   );
 }
 

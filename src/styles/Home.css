@@ -6,14 +6,13 @@ header, .header-content {
 header {
   border-bottom: 2px solid;
   height: 60px;
-
-  justify-content: center;  
 }
 
 .header-content {
   justify-content: space-between;
 
   width: 90%;
+  margin: auto;
 }
 
 header h1 {
