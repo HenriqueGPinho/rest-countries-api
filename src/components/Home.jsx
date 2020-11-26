@@ -4,11 +4,6 @@ import Form from './Form';
 import Container from './Container';
 
 function Home() {
-  const [theme, setTheme] = useState('light');
-  const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
-  }
-  
   return (
     <>
       <Header />
