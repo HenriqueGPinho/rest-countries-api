@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Header from './Header';
 import Form from './Form';
 import Container from './Container';
 
-import '../styles/Home.css';
-
 function Home() {
+  const [theme, setTheme] = useState('light');
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  }
   
   return (
     <>
-      <header>
-        <div className="header-content">
-          <h1>Where in the World?</h1>
-          <button>Dark Mode</button>
-        </div>
-      </header>
+      <Header />
       <Form />
       <Container />
     </>
