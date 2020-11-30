@@ -17,6 +17,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
+        <button onClick={themeToggler} >Theme</button>
         <Header />
         <Home />
     </ThemeProvider>
