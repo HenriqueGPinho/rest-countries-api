@@ -1,11 +1,10 @@
 import React from 'react';
+import GridWrapper from './styles/GridWrapper';
 import Card from './Card';
-
-import '../styles/Container.css';
 
 function Container() {
   return (
-    <div className="grid-container">
+    <GridWrapper>
       <Card />
       <Card />
       <Card />
@@ -15,7 +14,7 @@ function Container() {
       <Card />
       <Card />
       <Card />
-    </div>
+    </GridWrapper>
   );
 }
 

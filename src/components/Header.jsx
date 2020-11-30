@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Header.css';
+import HeaderWrapper from './styles/HeaderWrapper.js';
 
 
 function Header() {
@@ -7,12 +7,12 @@ function Header() {
 
   return (
     <>
-      <div className="header-container">
+      <HeaderWrapper>
         <div className="header-content">
           <h1>Where in the World?</h1>
           <button>Dark Mode</button>
         </div>
-      </div>
+      </HeaderWrapper>
     </>
 
   );

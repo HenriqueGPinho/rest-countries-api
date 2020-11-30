@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/Form.css';
+import FormWrapper from './styles/FormWrapper';
 
 function Form() {
   return(
-    <form>
-      <input type="text" placeholder="Search for a country" />
+    <FormWrapper>
+    <input type="text" placeholder="Search for a country" />
       <select>
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
@@ -13,7 +13,7 @@ function Form() {
         <option value="europe">Europe</option>
         <option value="oceania">Oceania</option>
       </select>
-    </form>
+    </FormWrapper>
   );
 }
 

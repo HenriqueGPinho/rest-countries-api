@@ -1,6 +1,5 @@
 import React from 'react';
-import CardWrapper from '../styles/CardWrapper';
-//import '../styles/Card.css';
+import CardWrapper from './styles/CardWrapper';
 
 function Card() {
   return (

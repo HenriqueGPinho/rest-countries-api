@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './components/GlobalStyles';
+import { GlobalStyles } from './components/styles/Global';
 import Header from './components/Header';
 import Home from "./components/Home";
-import { darkTheme, lightTheme } from './components/Themes';
-import './styles/App.css';
+import { darkTheme, lightTheme } from './components/styles/Themes';
 
 function App() {
   const [theme, setTheme] = useState('light');
