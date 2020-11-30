@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './components/GlobalStyles';
+import Header from './components/Header';
 import Home from "./components/Home";
 import { darkTheme, lightTheme } from './components/Themes';
 import './styles/App.css';
@@ -17,8 +18,8 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <>
+        <Header />
         <GlobalStyles />
-        <button onClick={themeToggler}>tema</button>
         <Home />
       </>
     </ThemeProvider>
