@@ -17,11 +17,9 @@ function App() {
   
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <>
-        <Header />
         <GlobalStyles />
+        <Header />
         <Home />
-      </>
     </ThemeProvider>
   );
 }

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle `
-  body: {
+  body {
     background: ${({ theme }) => theme.background};
     text: ${({ theme }) => theme.text};
     font-family: 'Nunito Sans', sans-serif;
