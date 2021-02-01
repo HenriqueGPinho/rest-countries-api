@@ -12,7 +12,7 @@ const GridWrapper = styled.div`
     grid-column-gap: 50px;
   }
 `
-
+// TODO fazer os cards receberem as informaçoes da api;
 function Container() {
   return (
     <GridWrapper>
