@@ -6,19 +6,16 @@ import Home from "./components/Home";
 import { darkTheme, lightTheme } from './assets/Themes';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-  
-  const themeToggler = () => {
-    if (theme === 'light') setTheme('dark');
-    else setTheme('light');
-    console.log(theme);
-  }
+  const [isDark, setIsDark] = useState(false);
   
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
-        <button onClick={themeToggler} >Theme</button>
-        <Header />
+        <Header>
+          <button onClick={
+            () => {isDark ? setIsDark(false) : setIsDark(true)}
+          } >Dark Mode</button>
+        </Header>
         <Home />
     </ThemeProvider>
   );

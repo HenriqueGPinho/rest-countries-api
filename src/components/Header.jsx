@@ -28,13 +28,13 @@ const HeaderWrapper = styled.div`
   }
 `
 
-function Header() {
+function Header(props) {
   return (
     <>
       <HeaderWrapper>
         <div className="header-content">
           <h1>Where in the World?</h1>
-          <button>Dark Mode</button>
+          {props.children}
         </div>
       </HeaderWrapper>
     </>
