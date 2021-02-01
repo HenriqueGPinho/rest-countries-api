@@ -19,7 +19,7 @@ function App() {
     //console.log(countries);
   }
 
-  fetchCountries().then(e => console.log(e[1]));
+  fetchCountries().then(e => console.log(e));
 
   const [isDark, setIsDark] = useState(false);
   
