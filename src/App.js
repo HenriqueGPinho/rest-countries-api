@@ -6,6 +6,21 @@ import Home from "./components/Home";
 import { darkTheme, lightTheme } from './assets/Themes';
 
 function App() {
+
+  const countries = [];
+
+  async function fetchCountries() {
+    const response = await fetch("https://restcountries.eu/rest/v2/all");
+    const data = await response.json();
+    data.map(country => {
+      return countries.push(country);
+    });
+    return countries;
+    //console.log(countries);
+  }
+
+  fetchCountries().then(e => console.log(e[1]));
+
   const [isDark, setIsDark] = useState(false);
   
   return (
