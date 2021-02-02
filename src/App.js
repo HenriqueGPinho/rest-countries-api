@@ -4,11 +4,8 @@ import { GlobalStyles } from './assets/Global';
 import Header from './components/Header';
 import Home from "./components/Home";
 import { darkTheme, lightTheme } from './assets/Themes';
-import fetchCountries from './assets/fetchCountries';
 
 function App() {
-
-  fetchCountries().then(data => console.log(data));
 
   const [isDark, setIsDark] = useState(false);
   
