@@ -7,3 +7,5 @@ export default async function fetchCountries() {
   });
   return countries;
 }
+
+//TODO chance method (use axios?)

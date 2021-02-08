@@ -10,14 +10,14 @@ const CardWrapper = styled.div`
   }
 `
 
-function Card() {
+function Card(props) {
   return (
     <CardWrapper>
-      <img src="https://restcountries.eu/data/bra.svg" alt="country flag"/>
-      <h2>Brazil</h2>
-      <p>Population:</p>
-      <p>Region:</p>
-      <p>Capital:</p>
+      <img src={props.flag} alt="country flag"/>
+      <h2>{props.name}</h2>
+      <p>Population: {props.population}</p>
+      <p>Region: {props.region}</p>
+      <p>Capital: {props.capital}</p>
     </CardWrapper>
   );
 }
