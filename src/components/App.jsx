@@ -18,8 +18,7 @@ function App() {
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header>
-
-          <Button onClick={console.log("click")}>
+          <Button onClick={changeMode}>
             Dark Mode
           </Button>
         </Header>
