@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './assets/Global';
-import Header from './components/Header';
-import Home from "./components/Home";
-import { darkTheme, lightTheme } from './assets/Themes';
+import { GlobalStyles } from '../assets/Global';
+import Header from './Header';
+import Home from "./Home";
+import { darkTheme, lightTheme } from '../assets/Themes';
 
 function App() {
 
