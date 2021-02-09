@@ -4,18 +4,24 @@ import { GlobalStyles } from '../assets/Global';
 import Header from './Header';
 import Home from "./Home";
 import { darkTheme, lightTheme } from '../assets/Themes';
+import Button from './Button';
 
 function App() {
 
   const [isDark, setIsDark] = useState(false);
   
+  function changeMode() {
+    isDark ? setIsDark(false) : setIsDark(true);
+  }
+
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header>
-          <button onClick={
-            () => {isDark ? setIsDark(false) : setIsDark(true)}
-          } >Dark Mode</button>
+
+          <Button onClick={console.log("click")}>
+            Dark Mode
+          </Button>
         </Header>
         <Home />
     </ThemeProvider>

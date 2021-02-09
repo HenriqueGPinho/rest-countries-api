@@ -19,13 +19,6 @@ const HeaderWrapper = styled.div`
   h1 {
     font-size: 1.4em;
   }
-
-  button {
-    border: none;
-    background-color: inherit;
-    padding: 0;
-    font-size: 1.4em;
-  }
 `
 
 function Header(props) {
