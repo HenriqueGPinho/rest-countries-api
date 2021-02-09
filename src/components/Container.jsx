@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
 
@@ -15,12 +15,14 @@ const GridWrapper = styled.div`
 
 function Container() {
   const [countries, setCountries] = useState([]);
-
-  fetch("https://restcountries.eu/rest/v2/all")
-  .then(res => res.json())
-  .then(result => setCountries(result)
-  )
-
+  
+  useEffect(() => {
+    fetch("https://restcountries.eu/rest/v2/all")
+    .then(res => res.json())
+    .then(result => setCountries(result)
+    )
+  },[]);
+  
   return (
     <GridWrapper>
       {
@@ -33,7 +35,7 @@ function Container() {
             region={country.region}
             capital={country.capital}
           />)
-        })
+        },[])
       }
     </GridWrapper>
   );
