@@ -16,6 +16,7 @@ const GridWrapper = styled.div`
 
 function Container() {
   const [countries, setCountries] = useState([]);
+  const [formValue, setFormValue] = useState("");
   
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -24,9 +25,8 @@ function Container() {
     )
   },[]);
 
-  let formValue;
-
   function changeFormValue(e) {
+    setFormValue(e.target.value.toLowerCase());
     console.log(e.target.value);
   }
   
@@ -36,15 +36,27 @@ function Container() {
       <GridWrapper>
         {
           countries.map((country, index) => {
-            return (<Card 
-              key={index}
-              flag={country.flag}
-              name={country.name}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-            />)
-          },[])
+            if (!formValue) {
+              return (<Card 
+                key={index}
+                flag={country.flag}
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+              />)
+            }
+            if (country.name.toLowerCase().includes(formValue)) {
+              return (<Card 
+                key={index}
+                flag={country.flag}
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+              />)
+            }
+          })
         }
       </GridWrapper>
     </>
