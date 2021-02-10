@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
+import Form from './Form';
 
 const GridWrapper = styled.div`
   width: 90%;
@@ -22,22 +23,31 @@ function Container() {
     .then(result => setCountries(result)
     )
   },[]);
+
+  let formValue;
+
+  function changeFormValue(e) {
+    console.log(e.target.value);
+  }
   
   return (
-    <GridWrapper>
-      {
-        countries.map((country, index) => {
-          return (<Card 
-            key={index}
-            flag={country.flag}
-            name={country.name}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-          />)
-        },[])
-      }
-    </GridWrapper>
+    <>
+      <Form onChange={changeFormValue}/>
+      <GridWrapper>
+        {
+          countries.map((country, index) => {
+            return (<Card 
+              key={index}
+              flag={country.flag}
+              name={country.name}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />)
+          },[])
+        }
+      </GridWrapper>
+    </>
   );
 }
 

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../assets/Global';
 import Header from './Header';
-import Home from "./Home";
 import { darkTheme, lightTheme } from '../assets/Themes';
 import Button from './Button';
+import Container from './Container';
 
 function App() {
 
@@ -18,11 +18,9 @@ function App() {
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header>
-          <Button onClick={changeMode}>
-            Dark Mode
-          </Button>
+          <Button onClick={changeMode}>Dark Mode</Button>
         </Header>
-        <Home />
+        <Container />
     </ThemeProvider>
   );
 }

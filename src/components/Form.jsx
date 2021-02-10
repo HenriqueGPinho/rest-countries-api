@@ -28,10 +28,14 @@ const FormWrapper = styled.form`
   }
 `
 
-function Form() {
+function Form(props) {
   return(
     <FormWrapper>
-    <input type="text" placeholder="Search for a country" />
+      <input
+        type="text"
+        onChange={props.onChange} 
+        placeholder="Search for a country"
+      />
       <select>
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
