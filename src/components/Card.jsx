@@ -7,6 +7,7 @@ const CardWrapper = styled.div`
   justify-content: space-between;
   border: 1px solid black;
   margin-bottom: 50px;
+  max-width: 300px;
 
   img {
     width: 100%;
