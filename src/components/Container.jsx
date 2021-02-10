@@ -56,6 +56,7 @@ function Container() {
                 capital={country.capital}
               />)
             }
+            return "";
           })
         }
       </GridWrapper>
