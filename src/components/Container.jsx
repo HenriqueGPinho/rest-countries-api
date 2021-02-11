@@ -11,6 +11,7 @@ const GridWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     grid-column-gap: 50px;
+    max-width: 1440px;
   }
 `
 

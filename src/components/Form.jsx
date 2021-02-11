@@ -7,16 +7,32 @@ const FormWrapper = styled.form`
   align-items: center;
 
   width: 90%;
+  max-width: 1440px;
   margin: auto;
 
   input, select {
-    padding: 15px 0;
     margin: 20px 0;
+    border: 15px solid ${({ theme }) => theme.elements};
+    border-radius: .5em;
+    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.elements};
+    box-shadow: ${({ theme }) => theme.shadow};
+    font-family: inherit;
+    font-size: 1.2em;
   }
   
   input {
     box-sizing: border-box;
+    ::placeholder {
+      color: ${({ theme }) => theme.placeholder}
+    }
   }
+
+  select {
+    padding-right: 45px;
+  }
+
+  //TODO apply style to the options
   
   @media(min-width: 480px) {
     flex-direction: row;
@@ -34,10 +50,10 @@ function Form(props) {
       <input
         type="text"
         onChange={props.onChange} 
-        placeholder="Search for a country"
+        placeholder="Search for a country..."
       />
       <select>
-        <option value="">Filter by Region</option>
+        <option value="" hidden>Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>

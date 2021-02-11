@@ -3,8 +3,11 @@ import styled from 'styled-components';
 
 const ButtonWrapper = styled.button`
   border: none;
+  padding: 15px 0;
   background-color: inherit;
-  font-size: 1.4em;
+  color: ${({ theme }) => theme.text};
+  font-size: 1.2em;
+  font-family: inherit;
 `
 
 function Button(props) {

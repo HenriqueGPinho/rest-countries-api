@@ -5,12 +5,20 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid black;
+  background-color:${({ theme }) => theme.elements};
+  box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 50px;
   max-width: 300px;
+  border-radius: .5em;
 
   img {
     width: 100%;
+    border-radius: .5em .5em 0 0 ;
+  }
+
+  .infos {
+    padding: 0 2em 2em 2em;
+    font-size: 1.4em;
   }
 `
 
@@ -18,12 +26,12 @@ function Card(props) {
   return (
     <CardWrapper>
       <img src={props.flag} alt="country flag"/>
-      <section className="infos">
+      <sectin className="infos">
         <h2>{props.name}</h2>
-        <p>Population: {props.population}</p>
-        <p>Region: {props.region}</p>
-        <p>Capital: {props.capital}</p>
-      </section>
+        <p><strong>Population:</strong> {props.population}<br />
+        <strong>Region:</strong> {props.region}<br />
+        <strong>Capital:</strong> {props.capital}</p>
+      </sectin>
     </CardWrapper>
   );
 }
