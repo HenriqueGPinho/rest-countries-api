@@ -28,7 +28,6 @@ function Container() {
 
   function changeFormValue(e) {
     setFormValue(e.target.value.toLowerCase());
-    console.log(e.target.value);
   }
   
   return (
