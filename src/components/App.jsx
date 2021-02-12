@@ -25,7 +25,7 @@ function App() {
             Dark Mode
           </Button>
         </Header>
-        <Container />
+        <Container theme={isDark}/>
     </ThemeProvider>
   );
 }

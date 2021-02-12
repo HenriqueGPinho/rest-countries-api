@@ -15,7 +15,7 @@ const GridWrapper = styled.div`
   }
 `
 
-function Container() {
+function Container(props) {
   const [countries, setCountries] = useState([]);
   const [formValue, setFormValue] = useState("");
   
@@ -32,7 +32,7 @@ function Container() {
   
   return (
     <>
-      <Form onChange={changeFormValue}/>
+      <Form onChange={changeFormValue} theme={props.theme}/>
       <GridWrapper>
         {
           countries.map((country, index) => {

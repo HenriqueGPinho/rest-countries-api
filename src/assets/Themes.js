@@ -12,5 +12,5 @@ export const darkTheme = {
   elements: 'hsl(209, 23%, 22%)',
   input: 'hsl(0, 0%, 100%)',
   shadow: '0 1px 5px hsl(207, 26%, 15%)',
-  placeholder: 'hsl(0, 0%, 70%)',
+  placeholder: 'hsl(0, 0%, 80%)',
 }
