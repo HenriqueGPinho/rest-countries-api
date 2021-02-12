@@ -22,7 +22,7 @@ function App() {
             onClick={changeMode}
             theme={isDark}
           >
-            Dark Mode
+            {isDark ? "Light" : "Dark"} Mode
           </Button>
         </Header>
         <Container theme={isDark}/>
