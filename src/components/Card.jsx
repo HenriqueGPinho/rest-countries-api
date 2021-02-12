@@ -26,12 +26,12 @@ function Card(props) {
   return (
     <CardWrapper>
       <img src={props.flag} alt="country flag"/>
-      <sectin className="infos">
+      <section className="infos">
         <h2>{props.name}</h2>
         <p><strong>Population:</strong> {props.population}<br />
         <strong>Region:</strong> {props.region}<br />
         <strong>Capital:</strong> {props.capital}</p>
-      </sectin>
+      </section>
     </CardWrapper>
   );
 }
