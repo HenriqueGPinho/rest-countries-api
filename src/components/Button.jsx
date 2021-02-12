@@ -12,7 +12,7 @@ const ButtonWrapper = styled.button`
   font-family: inherit;
 
   svg {
-    color: ${({ theme }) => theme.text};
+    padding: 3px;
   }
 `
 
