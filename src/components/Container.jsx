@@ -17,7 +17,9 @@ const GridWrapper = styled.div`
 
 function Container(props) {
   const [countries, setCountries] = useState([]);
-  const [formValue, setFormValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("");
+  const regions = [];
   
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -26,27 +28,35 @@ function Container(props) {
     )
   },[]);
 
-  function changeFormValue(e) {
-    setFormValue(e.target.value.toLowerCase());
+  function changeSearch(e) {
+    setSearchValue(e.target.value.toLowerCase());
+  }
+
+  function changeSelect(e) {
+    setSelectedRegion(e.target.value);
+  }
+
+  function pushIfDifferent(item) {
+    if (!regions.includes(item) && item !== '') {
+      regions.push(item);
+    }
   }
   
   return (
     <>
-      <Form onChange={changeFormValue} theme={props.theme}/>
+      <Form 
+        onInputChange={changeSearch} 
+        onSelectChange={changeSelect} 
+        theme={props.theme} 
+        regions={regions}
+      />
       <GridWrapper>
         {
           countries.map((country, index) => {
-            if (!formValue) {
-              return (<Card 
-                key={index}
-                flag={country.flag}
-                name={country.name}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-              />)
-            }
-            if (country.name.toLowerCase().includes(formValue)) {
+            pushIfDifferent(country.region);
+            if (country.name.toLowerCase().includes(searchValue) 
+            && (selectedRegion === country.region.toLowerCase() 
+            || selectedRegion === "")) {
               return (<Card 
                 key={index}
                 flag={country.flag}
