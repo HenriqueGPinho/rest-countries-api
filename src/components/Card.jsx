@@ -8,7 +8,6 @@ const CardWrapper = styled.div`
   background-color:${({ theme }) => theme.elements};
   box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 50px;
-  max-width: 300px;
   border-radius: .5em;
 
   img {

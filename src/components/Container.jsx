@@ -4,10 +4,15 @@ import styled from "styled-components";
 import Form from './Form';
 
 const GridWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 90%;
   margin: auto;
 
+
   @media(min-width: 480px) {
+    width: 90%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     grid-column-gap: 50px;

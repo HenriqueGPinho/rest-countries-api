@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   width: 90%;
   max-width: 1440px;
@@ -52,8 +51,9 @@ const FormWrapper = styled.form`
     flex-direction: row;
     justify-content: space-between;
     
-    input {
-      width: 300px;
+    .search-bar, input {
+      width: 50%;
+      max-width: 450px;
     }
   }
 `
