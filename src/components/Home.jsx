@@ -20,7 +20,7 @@ const GridWrapper = styled.div`
   }
 `
 
-function Container(props) {
+function Home(props) {
   const [countries, setCountries] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -62,14 +62,16 @@ function Container(props) {
             if (country.name.toLowerCase().includes(searchValue) 
             && (selectedRegion === country.region.toLowerCase() 
             || selectedRegion === "")) {
-              return (<Card 
-                key={index}
-                flag={country.flag}
-                name={country.name}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-              />)
+              return (
+                <Card 
+                  key={index}
+                  flag={country.flag}
+                  name={country.name}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                />
+              )
             }
             return "";
           })
@@ -79,4 +81,4 @@ function Container(props) {
   );
 }
 
-export default Container;
+export default Home;
