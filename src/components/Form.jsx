@@ -38,6 +38,7 @@ const FormWrapper = styled.form`
   }
 
   select {
+    max-width: 55%;
     padding-right: 45px;
   }
 
