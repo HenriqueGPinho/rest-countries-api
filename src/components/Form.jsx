@@ -31,6 +31,7 @@ const FormWrapper = styled.form`
   }
 
   input {
+    width: 100%;
     background-color: ${({ theme }) => theme.elements};
     ::placeholder {
       color: ${({ theme }) => theme.placeholder};
@@ -52,7 +53,7 @@ const FormWrapper = styled.form`
     flex-direction: row;
     justify-content: space-between;
     
-    .search-bar, input {
+    .search-bar {
       width: 50%;
       max-width: 450px;
     }
