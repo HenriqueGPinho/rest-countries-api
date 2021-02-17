@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../assets/Global';
-import Header from './Header';
 import { darkTheme, lightTheme } from '../assets/Themes';
+import { Link, Route, Router, Switch } from 'react-router-dom';
+import Header from './Header';
 import Button from './Button';
-import Container from './Container';
+import Home from './Home';
+import Country from './Country';
 
 function App() {
 
@@ -18,14 +20,12 @@ function App() {
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header>
-          <Button 
-            onClick={changeMode}
-            theme={isDark}
-          >
+          <Button onClick={changeMode} theme={isDark}>
             {isDark ? "Light" : "Dark"} Mode
           </Button>
         </Header>
-        <Container theme={isDark}/>
+        
+        <Home theme={isDark}/>
     </ThemeProvider>
   );
 }
