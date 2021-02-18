@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
 import Form from './Form';
+import { Link } from 'react-router-dom';
 
 const GridWrapper = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const GridWrapper = styled.div`
   }
 `
 
-function Home(props) {
+function Home() {
   const [countries, setCountries] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -52,7 +53,6 @@ function Home(props) {
       <Form 
         onInputChange={changeSearch} 
         onSelectChange={changeSelect} 
-        theme={props.theme} 
         regions={regions}
       />
       <GridWrapper>
@@ -63,14 +63,16 @@ function Home(props) {
             && (selectedRegion === country.region.toLowerCase() 
             || selectedRegion === "")) {
               return (
-                <Card 
-                  key={index}
-                  flag={country.flag}
-                  name={country.name}
-                  population={country.population}
-                  region={country.region}
-                  capital={country.capital}
-                />
+                /*<Link to="/country" key={index}>*/
+                  <Card 
+                    key={index}
+                    flag={country.flag}
+                    name={country.name}
+                    population={country.population}
+                    region={country.region}
+                    capital={country.capital}
+                  />
+                /*<Link />*/
               )
             }
             return "";

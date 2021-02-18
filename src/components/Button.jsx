@@ -18,7 +18,7 @@ const ButtonWrapper = styled.button`
 
 function Button(props) {
   function changeIcon() {
-    if (props.theme) {
+    if (props.isDark) {
       return (
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
