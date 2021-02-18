@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
 import Form from './Form';
-import { Link } from 'react-router-dom';
 
 const GridWrapper = styled.div`
   display: flex;
@@ -63,16 +62,15 @@ function Home() {
             && (selectedRegion === country.region.toLowerCase() 
             || selectedRegion === "")) {
               return (
-                /*<Link to="/country" key={index}>*/
-                  <Card 
-                    key={index}
-                    flag={country.flag}
-                    name={country.name}
-                    population={country.population}
-                    region={country.region}
-                    capital={country.capital}
-                  />
-                /*<Link />*/
+                <Card 
+                  key={index}
+                  id={index}
+                  flag={country.flag}
+                  name={country.name}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                />
               )
             }
             return "";

@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  //justify-content: space-between;
   background-color:${({ theme }) => theme.elements};
   box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 50px;
@@ -34,7 +31,7 @@ const CardWrapper = styled.div`
 function Card(props) {
   return (
     <CardWrapper>
-      <Link className="link" to="/country">
+      <Link className="link" to={`/country?id=${props.id}`}>
         <img src={props.flag} alt="country flag"/>
         <section className="infos">
           <h2>{props.name}</h2>
