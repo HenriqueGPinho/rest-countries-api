@@ -39,7 +39,7 @@ function App() {
               <Home countries={countries}/>
             </Route>
             <Route path="/country">
-              <Country />  
+              <Country countries={countries}/>  
             </Route>
             <Route path="*">
               <PageNotFound />  

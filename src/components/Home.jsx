@@ -58,7 +58,7 @@ function Home(props) {
               return (
                 <Card 
                   key={country.numericCode}
-                  numericCode={country.numericCode}
+                  alphaCode={country.alpha3Code}
                   flag={country.flag}
                   name={country.name}
                   population={country.population}

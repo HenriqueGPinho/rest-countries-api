@@ -31,12 +31,12 @@ const CardWrapper = styled.div`
 function Card(props) {
   return (
     <CardWrapper>
-      <Link className="link" to={`/country?id=${props.numericCode}`}>
+      <Link className="link" to={`/country?id=${props.alphaCode}`}>
         <img src={props.flag} alt="country flag"/>
         <section className="infos">
           <h2>{props.name}</h2>
           <p>
-            <strong>Population:</strong> {props.population}<br />
+            <strong>Population:</strong> {props.population}<br /> {/* TODO format number*/}
             <strong>Region:</strong> {props.region}<br />
             <strong>Capital:</strong> {props.capital}
           </p>
