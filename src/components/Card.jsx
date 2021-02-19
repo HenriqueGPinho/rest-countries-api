@@ -31,7 +31,7 @@ const CardWrapper = styled.div`
 function Card(props) {
   return (
     <CardWrapper>
-      <Link className="link" to={`/country?id=${props.id}`}>
+      <Link className="link" to={`/country?id=${props.numericCode}`}>
         <img src={props.flag} alt="country flag"/>
         <section className="infos">
           <h2>{props.name}</h2>
