@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../assets/Global';
 import { darkTheme, lightTheme } from '../assets/Themes';
@@ -12,10 +12,18 @@ import PageNotFound from './PageNotFound';
 function App() {
 
   const [isDark, setIsDark] = useState(false);
+  const [countries, setCountries] = useState([]);
   
   function changeMode() {
     isDark ? setIsDark(false) : setIsDark(true);
   }
+
+  useEffect(() => {
+    fetch("https://restcountries.eu/rest/v2/all")
+    .then(res => res.json())
+    .then(result => setCountries(result)
+    )
+  },[]);
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
@@ -27,9 +35,15 @@ function App() {
         </Header>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact={true} component={Home} />
-            <Route path="/country" component={Country} />
-            <Route path="*" component={PageNotFound} />
+            <Route path="/" exact={true}>
+              <Home countries={countries}/>
+            </Route>
+            <Route path="/country">
+              <Country />  
+            </Route>
+            <Route path="*">
+              <PageNotFound />  
+            </Route>
           </Switch>
         </BrowserRouter>
     </ThemeProvider>
