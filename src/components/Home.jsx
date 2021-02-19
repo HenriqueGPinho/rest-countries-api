@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
 import Form from './Form';
@@ -20,18 +20,12 @@ const GridWrapper = styled.div`
   }
 `
 
-function Home() {
-  const [countries, setCountries] = useState([]);
+function Home(props) {
   const [searchValue, setSearchValue] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
   const regions = [];
   
-  useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all")
-    .then(res => res.json())
-    .then(result => setCountries(result)
-    )
-  },[]);
+  
 
   function changeSearch(e) {
     setSearchValue(e.target.value.toLowerCase());
@@ -56,15 +50,15 @@ function Home() {
       />
       <GridWrapper>
         {
-          countries.map((country, index) => {
+          props.countries.map(country => {
             pushIfDifferent(country.region);
             if (country.name.toLowerCase().includes(searchValue) 
             && (selectedRegion === country.region.toLowerCase() 
             || selectedRegion === "")) {
               return (
                 <Card 
-                  key={index}
-                  id={index}
+                  key={country.numericCode}
+                  numericCode={country.numericCode}
                   flag={country.flag}
                   name={country.name}
                   population={country.population}
