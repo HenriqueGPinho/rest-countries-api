@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function Country(props) {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
   let country;
+  let match = useRouteMatch();
 
   props.countries.forEach(item => {
     if (item.alpha3Code === id) country = item;
@@ -43,7 +44,7 @@ function Country(props) {
           <h3>Border Countries</h3>
           {country.borders.map((item, index) => {
             return (
-              <Link to={`../country?id=${item}`} key={index}>{item}</Link>
+              <Link to={`${match.url}?id=${item}`} key={index}>{item}</Link>
             )
           })}
         </section>
