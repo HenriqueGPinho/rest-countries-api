@@ -4,14 +4,14 @@ import { Link, useRouteMatch } from 'react-router-dom';
 function Country(props) {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
-  let country;
   let match = useRouteMatch();
+  let country;
 
   props.countries.forEach(item => {
     if (item.alpha3Code === id) country = item;
   });
 
-  console.log(country);
+  //TODO put functions inside other files
 
   function listNames(array) {
     const names = [];
@@ -20,6 +20,14 @@ function Country(props) {
       else names.push(array[i].name, ', ');
     }
     return names;
+  }
+
+  function alphaCodeToName(alphaCode, countriesList) {
+    let name;
+    countriesList.forEach(item => {
+      if (item.alpha3Code === alphaCode) name = item.name; 
+    })
+    return name;
   }
 
   return (
@@ -42,9 +50,9 @@ function Country(props) {
         </p>
         <section>
           <h3>Border Countries</h3>
-          {country.borders.map((item, index) => {
+          {country.borders.map((item) => {
             return (
-              <Link to={`${match.url}?id=${item}`} key={index}>{item}</Link>
+              <Link to={`${match.url}?id=${item}`} key={item}>{alphaCodeToName(item, props.countries)}</Link>
             )
           })}
         </section>
