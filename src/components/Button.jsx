@@ -17,6 +17,9 @@ const ButtonWrapper = styled.button`
 `
 
 function Button(props) {
+  
+  //TODO make changeIcon smaller
+  
   function changeIcon() {
     if (props.isDark) {
       return (

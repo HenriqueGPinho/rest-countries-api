@@ -9,6 +9,8 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
     font-family: 'Nunito Sans', sans-serif;
+
+    //TODO fix and enable transition
     /*transition: all 0.50s linear*/;
   }
 `

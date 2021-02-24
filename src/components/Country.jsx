@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
+import alphaCodeToName from '../assets/alphaCodeToName';
+import listNames from '../assets/listNames';
 
 const CountryWrapper = styled.div`
   //display: flex;
@@ -52,25 +54,6 @@ function Country(props) {
   props.countries.forEach(item => {
     if (item.alpha3Code === id) country = item;
   });
-
-  //TODO put functions inside other files
-
-  function listNames(array) {
-    const names = [];
-    for (let i = 0; i < array.length; i++) {
-      if (i === array.length - 1) names.push(array[i].name);
-      else names.push(array[i].name, ', ');
-    }
-    return names;
-  }
-
-  function alphaCodeToName(alphaCode, countriesList) {
-    let name;
-    countriesList.forEach(item => {
-      if (item.alpha3Code === alphaCode) name = item.name; 
-    })
-    return name;
-  }
 
   return (
     <CountryWrapper>

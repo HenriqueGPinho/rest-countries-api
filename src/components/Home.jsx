@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Card from './Card';
 import styled from "styled-components";
 import Form from './Form';
+import pushIfDifferent from '../assets/pushIfDifferent';
 
 const GridWrapper = styled.div`
   display: flex;
@@ -25,20 +26,12 @@ function Home(props) {
   const [selectedRegion, setSelectedRegion] = useState("");
   const regions = [];
   
-  
-
   function changeSearch(e) {
     setSearchValue(e.target.value.toLowerCase());
   }
 
   function changeSelect(e) {
     setSelectedRegion(e.target.value);
-  }
-
-  function pushIfDifferent(item) {
-    if (!regions.includes(item) && item !== '') {
-      regions.push(item);
-    }
   }
   
   return (
@@ -51,7 +44,7 @@ function Home(props) {
       <GridWrapper>
         {
           props.countries.map(country => {
-            pushIfDifferent(country.region);
+            pushIfDifferent(country.region, regions);
             if (country.name.toLowerCase().includes(searchValue) 
             && (selectedRegion === country.region.toLowerCase() 
             || selectedRegion === "")) {

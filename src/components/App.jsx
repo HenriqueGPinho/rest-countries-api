@@ -13,10 +13,6 @@ function App() {
 
   const [isDark, setIsDark] = useState(false);
   const [countries, setCountries] = useState([]);
-  
-  function changeMode() {
-    isDark ? setIsDark(false) : setIsDark(true);
-  }
 
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -29,7 +25,10 @@ function App() {
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header>
-          <Button onClick={changeMode} isDark={isDark}>
+          <Button onClick={() => {
+            isDark ? setIsDark(false) : setIsDark(true);
+          }} 
+          isDark={isDark}>
             {isDark ? "Light" : "Dark"} Mode
           </Button>
         </Header>
