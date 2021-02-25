@@ -37,7 +37,7 @@ function App() {
             <Route path="/" exact={true}>
               <Home countries={countries}/>
             </Route>
-            <Route path="/country">
+            <Route path="/country" exact={true}>
               <Country countries={countries}/>  
             </Route>
             <Route path="*">
