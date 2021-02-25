@@ -67,7 +67,7 @@ function Form(props) {
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24" 
-          fill={props.theme ? "white" : "black"} //TODO change button color
+          fill="black" //TODO change button color
           width="18px" 
           height="18px"
         >
