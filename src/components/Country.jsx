@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import alphaCodeToName from '../assets/alphaCodeToName';
@@ -49,11 +49,27 @@ function Country(props) {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
   let match = useRouteMatch();
-  let country;
-
-  props.countries.forEach(item => {
-    if (item.alpha3Code === id) country = item;
+  
+  const [country, setCountry] = useState({
+    flag: '',
+    name: '',
+    nativeName: '',
+    population: 0,
+    region: '',
+    subregion: '',
+    capital: '',
+    topLevelDomain: [],
+    currencies: [],
+    languages: [],
+    borders: []
   });
+
+  useEffect(() => {
+    fetch(`https://restcountries.eu/rest/v2/alpha/${id}`)
+    .then(res => res.json())
+    .then(result => setCountry(result)
+    )
+  },[id]);
 
   return (
     <CountryWrapper>
@@ -61,7 +77,7 @@ function Country(props) {
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 24 24" 
-        fill={props.theme ? "white" : "black"} //TODO change button color
+        fill="black" //TODO change button color
         width="20px" 
         height="20px"
         >
