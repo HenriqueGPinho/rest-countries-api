@@ -40,6 +40,7 @@ function Home(props) {
         onInputChange={changeSearch} 
         onSelectChange={changeSelect} 
         regions={regions}
+        theme={props.theme}
       />
       <GridWrapper>
         {

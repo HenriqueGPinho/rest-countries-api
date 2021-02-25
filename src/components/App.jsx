@@ -35,10 +35,10 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/" exact={true}>
-              <Home countries={countries}/>
+              <Home countries={countries} theme={isDark}/>
             </Route>
             <Route path="/country" exact={true}>
-              <Country countries={countries}/>  
+              <Country countries={countries} theme={isDark}/>  
             </Route>
             <Route path="*">
               <PageNotFound />  
