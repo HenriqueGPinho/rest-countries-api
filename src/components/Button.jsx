@@ -5,20 +5,18 @@ const ButtonWrapper = styled.button`
   display: flex;
   align-items: center;
   border: none;
-  padding: 15px 0;
+  padding: 1.5em 0;
   background-color: inherit;
   color: ${({ theme }) => theme.text};
   font-size: 1.2em;
   font-family: inherit;
 
   svg {
-    padding: 3px;
+    padding: .3em;
   }
 `
 
 function Button(props) {
-  
-  //TODO make changeIcon smaller
   
   function changeIcon() {
     if (props.isDark) {

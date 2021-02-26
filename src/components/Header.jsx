@@ -5,7 +5,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   box-shadow: ${({ theme }) => theme.shadow};
-  height: 60px;
+  height: 6em;
   background-color: ${({ theme }) => theme.elements};
 
   .header-content {

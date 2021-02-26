@@ -5,21 +5,17 @@ import alphaCodeToName from '../assets/alphaCodeToName';
 import listNames from '../assets/listNames';
 
 const CountryWrapper = styled.div`
-  //display: flex;
-  flex-direction: column;
   width: 90%;
+  max-width: 1440px;
   margin: auto;
-  font-size: 14px;
+  font-size: 1.2em;
   
-
   img {
     width: 100%;
     margin: 1em 0;
   }
 
-  .link {
-    display: inline-block;
-    font-size: 12px;
+  .back-link, .border-country {
     text-decoration: none;
     border-radius: .2em;
     box-shadow: ${({ theme }) => theme.shadow};
@@ -40,9 +36,38 @@ const CountryWrapper = styled.div`
     font-size: inherit;
 
     svg {
-      padding-right: 5px;
+      padding-right: .5em;
     }
   }
+
+  .border-countries {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .border-country {
+    min-width: 7em;
+  }
+
+
+  @media(min-width: 480px) {
+    img, .country-infos {
+      width: 45%;
+    }
+
+    .container, .p-infos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1440px;
+      margin: auto;
+    }
+
+    .container {
+      align-items: center;
+    }
+  }
+
 `
 
 function Country(props) {
@@ -73,7 +98,7 @@ function Country(props) {
 
   return (
     <CountryWrapper>
-      <Link className="link back-link" to='../'>
+      <Link className="back-link" to='../'>
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 24 24" 
@@ -87,34 +112,42 @@ function Country(props) {
         Back
       </Link>
       
-      <img src={country.flag} alt="country flag"/>
-      <h2>{country.name}</h2>
-      <p>
-        <strong>Native Name: </strong> {country.nativeName} <br/>
-        <strong>Population: </strong> {country.population} <br/>
-        <strong>Region: </strong> {country.region} <br/>
-        <strong>Sub Region: </strong> {country.subregion} <br/>
-        <strong>Capital: </strong> {country.capital} <br/>
-      </p>
-      <p>
-        <strong>Top Level Domain: </strong> {country.topLevelDomain} <br/>
-        <strong>Currencies: </strong> {listNames(country.currencies)} <br/>
-        <strong>Languages: </strong> {listNames(country.languages)} <br/>
-      </p>
-      <section>
-        <h3>Border Countries</h3>
-        {country.borders.map((item) => {
-          return (
-            <Link 
-            className="link"
-            to={`${match.url}?id=${item}`} 
-            key={item}
-            >
-              {alphaCodeToName(item, props.countries)}
-            </Link>
-          )
-        })}
-      </section>
+      <div className="container">
+        <img src={country.flag} alt="country flag"/>
+
+        <div className="country-infos">
+          <h2>{country.name}</h2>
+
+          <div className="p-infos">
+            <p>
+              <strong>Native Name: </strong> {country.nativeName} <br/>
+              <strong>Population: </strong> {country.population} <br/>
+              <strong>Region: </strong> {country.region} <br/>
+              <strong>Sub Region: </strong> {country.subregion} <br/>
+              <strong>Capital: </strong> {country.capital} <br/>
+            </p>
+            <p>
+              <strong>Top Level Domain: </strong> {country.topLevelDomain} <br/>
+              <strong>Currencies: </strong> {listNames(country.currencies)} <br/>
+              <strong>Languages: </strong> {listNames(country.languages)} <br/>
+            </p>
+          </div>
+          <h3>Border Countries:</h3>
+          <section className="border-countries">
+            {country.borders.map((item) => {
+              return (
+                <Link 
+                className="border-country"
+                to={`${match.url}?id=${item}`} 
+                key={item}
+                >
+                  {alphaCodeToName(item, props.countries)}
+                </Link>
+              )
+            })}
+          </section>
+        </div>
+      </div>
     </CountryWrapper>
   )
 }

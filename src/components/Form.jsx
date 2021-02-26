@@ -12,7 +12,7 @@ const FormWrapper = styled.form`
   .search-bar, select {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 2em 0;
     border-radius: .5em;
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.elements};
@@ -27,7 +27,7 @@ const FormWrapper = styled.form`
 
   input, select {
     border-radius: .5em;
-    border: 15px solid ${({ theme }) => theme.elements};
+    border: 1.2em solid ${({ theme }) => theme.elements};
   }
 
   input {
@@ -40,14 +40,12 @@ const FormWrapper = styled.form`
 
   select {
     max-width: 55%;
-    padding-right: 45px;
+    padding-right: 4.5em;
   }
 
   svg {
-    padding-left: 20px;
+    padding-left: 2em;
   }
-
-  //TODO apply style to the options
   
   @media(min-width: 480px) {
     flex-direction: row;
