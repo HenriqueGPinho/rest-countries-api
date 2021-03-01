@@ -48,6 +48,8 @@ const CountryWrapper = styled.div`
 
   .border-country {
     min-width: 7em;
+    display: flex;
+    justify-content: center;
   }
 
 
