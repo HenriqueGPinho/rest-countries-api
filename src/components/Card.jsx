@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import formatNumber from '../assets/formatNumber';
+
 const CardWrapper = styled.div`
   background-color:${({ theme }) => theme.elements};
   box-shadow: ${({ theme }) => theme.shadow};
@@ -36,7 +38,7 @@ function Card(props) {
         <section className="infos">
           <h2>{props.name}</h2>
           <p>
-            <strong>Population:</strong> {props.population}<br /> {/* TODO format number*/}
+            <strong>Population:</strong> {formatNumber(props.population)}<br />
             <strong>Region:</strong> {props.region}<br />
             <strong>Capital:</strong> {props.capital}
           </p>

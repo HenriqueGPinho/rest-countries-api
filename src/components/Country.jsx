@@ -3,6 +3,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import alphaCodeToName from '../assets/alphaCodeToName';
 import listNames from '../assets/listNames';
+import formatNumber from '../assets/formatNumber';
 
 const CountryWrapper = styled.div`
   width: 90%;
@@ -121,7 +122,7 @@ function Country(props) {
           <div className="p-infos">
             <p>
               <strong>Native Name: </strong> {country.nativeName} <br/>
-              <strong>Population: </strong> {country.population} <br/>
+              <strong>Population: </strong> {formatNumber(country.population)} <br/>
               <strong>Region: </strong> {country.region} <br/>
               <strong>Sub Region: </strong> {country.subregion} <br/>
               <strong>Capital: </strong> {country.capital} <br/>
