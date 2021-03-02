@@ -20,7 +20,6 @@ const CardWrapper = styled.div`
   }
 
   img {
-    width: 100%;
     border-radius: .5em .5em 0 0 ;
   }
 

@@ -39,6 +39,7 @@ const FormWrapper = styled.form`
   }
 
   select {
+    min-width: 16em;
     max-width: 55%;
     padding-right: 4.5em;
   }
