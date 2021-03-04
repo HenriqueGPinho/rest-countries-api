@@ -1,3 +1,7 @@
+# About
+
+Single page react app which shows and filters countries available in https://restcountries.eu RESTful API. This is a challenge found in https://www.frontendmentor.io/. You can see more details about the challenge below
+
 # Frontend Mentor - REST Countries API with color theme switcher
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
