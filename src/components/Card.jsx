@@ -9,6 +9,7 @@ const CardWrapper = styled.div`
   box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 5em;
   border-radius: .5em;
+  
 
   .link {
     display: flex;
@@ -26,6 +27,10 @@ const CardWrapper = styled.div`
   .infos {
     padding: 0 2em 2em 2em;
     font-size: 1.4em;
+  }
+
+  @media(min-width: 480px) {
+    max-width: 430px;
   }
 `
 
